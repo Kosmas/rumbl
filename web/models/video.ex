@@ -41,4 +41,11 @@ defmodule Rumbl.Video do
     |> String.downcase()
     |> String.replace(~r/[^\w-]+/, "-")
   end
+
+  defimpl Phoenix.Param, for: Rumbl.Video do
+    def to_param(%{slug: slug, id: id}) do
+      "#{id}-#{slug}"
+    end
+  end
 end
+
