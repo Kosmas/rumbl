@@ -10,7 +10,7 @@ let Video = {
     let playerId      = element.getAttribute("data-player-id")
     Player.init(element.id, playerId)
 
-    socket.conect()
+    socket.connect()
     let vidChannel = socket.channel("videos:" + videoId)
     // TODO join the vidChannel
   }
